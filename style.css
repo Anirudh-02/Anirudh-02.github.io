@@ -267,7 +267,6 @@ nav>a {
 
     .project {
         transform: scale(0.9);
-        pointer-events: none;
     }
 }
 
