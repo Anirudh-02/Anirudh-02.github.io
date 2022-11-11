@@ -291,7 +291,7 @@ nav>a {
     margin-top: 1rem;
 }
 
-#contactSection {
+.contact-icon-wrapper {
     display: flex;
     justify-content: center;
     gap: 1rem;
