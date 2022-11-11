@@ -1,0 +1,329 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkslateblue;
+}
+
+#sidebar {
+    height: 100vh;
+    width: 20%;
+    position: sticky;
+    top: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#mainContent {
+    background-color: black;
+    width: 80%;
+    position: relative;
+    color: white;
+    border-left: solid 0.01rem gainsboro;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.main {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    height: 100vh;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.main>h1 {
+    background: linear-gradient(to right, rgb(88, 10, 88), rgb(10, 10, 112), rgb(29, 92, 11), rgb(88, 10, 88));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: backgroundpan 3s linear infinite;
+    background-size: 200%;
+}
+
+.typewriter h2 {
+    overflow: hidden;
+    border-right: .15em solid whitesmoke;
+    white-space: nowrap;
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    animation:
+        typing 2s steps(30, end),
+        blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: whitesmoke
+    }
+}
+
+.sectionheading {
+    margin-left: 2rem;
+    font-size: 4rem;
+}
+
+.about>p {
+    margin-left: 2rem;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    margin: 2rem;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(20%);
+    transition: all 1s;
+}
+
+.about>h2 {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    min-width: 20px;
+    height: auto;
+}
+
+.icon:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.icon:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.icon:nth-child(4) {
+    transition-delay: 600ms;
+}
+
+.active {
+    font-size: 2.5rem;
+    padding: 0.3rem;
+    border: solid 0.2rem white;
+    border-radius: 10px;
+}
+
+@keyframes backgroundpan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+section {
+    min-height: 100vh;
+}
+
+
+
+nav>a {
+    text-decoration: none;
+    color: white;
+    font-size: xx-large;
+}
+
+.tools {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.tool {
+    margin: 2rem;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-20%);
+    transition: all 1s;
+}
+
+.visible {
+    transform: translateX(0);
+    filter: blur(0);
+    opacity: 1;
+}
+
+.tool:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.tool:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.tool:nth-child(4) {
+    transition-delay: 600ms;
+}
+
+.tool:nth-child(5) {
+    transition-delay: 800ms;
+}
+
+.projectsWrapper {
+    /* display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(375px, 1fr));
+    gap: 2rem;
+    padding: 0 2%;
+    justify-content: center;
+}
+
+.link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.555);
+    font-weight: bold;
+}
+
+.project {
+    border: solid 0.1rem silver;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.project:hover {
+    border: solid 2px white;
+}
+
+@media screen and (max-width: 725px) {
+    #sidebar {
+        display: none;
+    }
+
+    #mainContent {
+        width: 100%;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .icons {
+        flex-wrap: wrap;
+    }
+
+    .tools {
+        flex-wrap: wrap;
+    }
+
+    .project {
+        transform: scale(0.9);
+        pointer-events: none;
+    }
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.githubLinkIcon {
+    height: 1rem;
+    width: 1rem;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.desc {
+    margin-top: 1rem;
+}
+
+#contactSection {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.contactIconSVG {
+    height: 20vh;
+    width: 20vh;
+}
+
+.contactIcon {
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s;
+}
+
+.show {
+    filter: blur(0);
+    opacity: 1;
+}
+
+.contactIcon:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.contactIcon:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.aboutMe {
+    font-size: 1.7rem;
+}
